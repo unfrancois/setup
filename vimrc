@@ -181,7 +181,7 @@ noremap <silent> <leader>ef :NERDTreeFind<CR>
 noremap <silent> <Leader>tt :TagbarToggle<CR>
 noremap <silent> <Leader>cp :CtrlP 
 noremap <Leader>a :ProjectRootCD<CR>:Ack <C-r><C-w><Space> 
-map <C-a>     :Ack<Space>
+noremap <Leader>A  :ProjectRootCD<CR>:Ack<Space>
 
 inoremap {      {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O
@@ -210,6 +210,9 @@ let g:netrw_liststyle=3
 " inoremap <C-q> <Esc>:SaveSession<CR>:qa<CR>
 
 nnoremap <Leader>ss :%s/\<<C-r><C-w>\>//<Left><Left>
+"http://superuser.com/questions/220666/how-do-you-reuse-a-visual-mode-selection 
+"You may re-select the last selected visual area with gv.
+vnoremap <Leader>ss :s///<Left><Left>
 
 " Quickly edit/reload the vimrc file
 nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
