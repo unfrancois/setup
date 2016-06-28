@@ -86,3 +86,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+#http://www.howtogeek.com/howto/44997/how-to-use-bash-history-to-improve-your-command-line-productivity/
+HISTCONTROL=ignoreboth
