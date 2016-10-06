@@ -1,0 +1,16 @@
+#http://en.wikipedia.org/wiki/Alias_(command)#Alternatives
+# alias ll='ls -Flas'              # long listing, alias
+# ll () { ls -Flas "$@" ; }        # long listing, function
+#http://stackoverflow.com/questions/394230/detect-the-os-from-a-bash-script
+#case "$OSTYPE" in
+  #solaris*) echo "SOLARIS" ;;
+  #darwin*)  echo "OSX" ;; 
+  #linux*)   echo "LINUX" ;;
+  #bsd*)     echo "BSD" ;;
+  #*)        echo "unknown: $OSTYPE" ;;
+#esac
+gvim () { gvim --remote "$@" }
+alt_gci () { git commit -m "$(git diff --name-only --cached)" }
+alt_done_save () { find . -name "$@" -type f | xargs -I {} sed -n -e 's/^.*#DONE:\(.*\)/\1/p' {} > done.txt }
+alt_done_rm () { find . -name "$@" -type f | xargs -I {} sed -i -e '/DONE:/ d' {} }
+alias tt='tree -C -s -F -L'
