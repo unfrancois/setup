@@ -293,8 +293,9 @@ endif
 
 "http://vim.wikia.com/wiki/Insert_current_date_or_time
 "http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_2)
-nmap <Leader>td @='OTODO(FH,  <C-V><Esc>'<CR>"=strftime("\%x")<CR>P@='a):<C-V><Esc>'<CR>A
-
+nmap <Leader>td @='iTODO(FH,  <C-V><Esc>'<CR>"=strftime("\%x")<CR>P@='a):<C-V><Esc>'<CR>A
+nmap <Leader>fm @='iFIXME(FH,  <C-V><Esc>'<CR>"=strftime("\%x")<CR>P@='a):<C-V><Esc>'<CR>A
+nnoremap <Leader>gv :view /tmp/gitdiff<CR>
 "Fugitive mappings
 "http://www.reddit.com/r/vim/comments/21f4gm/best_workflow_when_using_fugitive/
 nnoremap <Leader>ga :Git add %:p<CR><CR>
@@ -335,5 +336,10 @@ let g:NERDTreeWinPos = "right"
 "http://stackoverflow.com/questions/4385515/take-diff-of-two-vertical-opened-windows-in-vim
 nnoremap <Leader>df :windo diffthis<CR>
 nnoremap <Leader>dc :diffoff!<CR>
+set grepprg=ack
+let g:grep_cmd_opts = '--noheading --nocolumn'
+let g:ack_default_options = " -s -H --nopager --nocolor --nogroup --nocolumn"
+"Force --nocolumn option for Ack plugin to be compatible with greplace behaviour, 
+"https://raw.githubusercontent.com/mileszs/ack.vim/master/plugin/ack.vim
 "let g:rooter_manual_only = 1
 "let g:rooter_patterns = ['.git/']
