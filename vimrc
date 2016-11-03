@@ -65,7 +65,7 @@ Plugin 'mjbrownie/browser.vim'
 Plugin 'AndrewRadev/linediff.vim'
 "Plugin 'airblade/vim-rooter'
 Plugin 'dbakker/vim-projectroot'
-
+Plugin 'kburdett/vim-nuuid.git' "then comment in plugin nuuidgen to get uuid in **lowercase**!
 "https://www.reddit.com/r/vim/comments/2sx567/snipmate_and_youcompleteme_doesnt_work_well/
 "https://github.com/honza/vim-snippets/issues/363
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -80,7 +80,9 @@ Plugin 'garbas/vim-snipmate'
 "let g:UltiSnipsJumpForwardTrigger="<tab>"
 "let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 Plugin 'honza/vim-snippets'
-
+Plugin 'eagletmt/ghcmod-vim'
+"Install https://github.com/bitc/lushtags
+Plugin 'bitc/lushtags'
 
 call vundle#end() 
 
@@ -157,7 +159,9 @@ set softtabstop=4   "Indent by 4 spaces when pressing <TAB>
 set shiftwidth=4    "Indent by 4 spaces when using >>, <<, == etc.
 
 set autoindent      "Keep indentation from previous line
-"set smartindent     "Automatically inserts indentation in some cases
+set smartindent     "Automatically inserts indentation in some cases
+set smartcase
+set smarttab
 "set cindent         "Like smartindent, but stricter and more customisable
 
 set omnifunc=syntaxcomplete#Complete
@@ -180,8 +184,10 @@ noremap <silent> <leader>ee :NERDTreeToggle<CR>
 noremap <silent> <leader>ef :NERDTreeFind<CR>
 noremap <silent> <Leader>tt :TagbarToggle<CR>
 noremap <silent> <Leader>cp :CtrlP 
+noremap <Leader>cd :ProjectRootCD<CR>
 noremap <Leader>a :ProjectRootCD<CR>:Ack <C-r><C-w><Space> 
 noremap <Leader>A  :ProjectRootCD<CR>:Ack<Space>
+map <C-a>     :Ack<Space>
 
 inoremap {      {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O
@@ -310,6 +316,7 @@ nnoremap <Leader>ge :Gedit<CR>
 nnoremap <Leader>gw :Gwrite<CR><CR>
 nnoremap <Leader>gl :silent! Glog<CR>:bot copen<CR>
 nnoremap <Leader>gp :Ggrep<Space>
+autocmd QuickFixCmdPost *grep* cwindow
 nnoremap <Leader>gm :Gmove<Space>
 "nnoremap <space>gb :Git branch<Space>
 "nnoremap <space>go :Git checkout<Space>
@@ -343,3 +350,10 @@ let g:ack_default_options = " -s -H --nopager --nocolor --nogroup --nocolumn"
 "https://raw.githubusercontent.com/mileszs/ack.vim/master/plugin/ack.vim
 "let g:rooter_manual_only = 1
 "let g:rooter_patterns = ['.git/']
+"
+" Required for portability between Mac and Linux of greplace use
+set grepprg=ack
+let g:grep_cmd_opts = '--noheading --nocolumn'
+"Didn't work last time I try
+"set grepprg=git\ grep
+"let g:grep_cmd_opts = '--line-number'
