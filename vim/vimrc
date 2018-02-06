@@ -1,0 +1,25 @@
+set nocompatible
+filetype off
+let mapleader=","
+
+source ~/.vim/conf/vundle.vim
+source ~/.vim/conf/navigation.vim
+source ~/.vim/conf/status.vim
+source ~/.vim/conf/gui.vim
+source ~/.vim/conf/font_colorscheme.vim
+source ~/.vim/conf/buffer_session.vim
+source ~/.vim/conf/search.vim
+source ~/.vim/conf/format_indent.vim
+"source ~/.vim/conf/autocomplete.vim
+source ~/.vim/conf/browsing.vim
+source ~/.vim/conf/editing.vim
+source ~/.vim/conf/build.vim
+source ~/.vim/conf/git.vim
+source ~/.vim/conf/syntax.vim
+source ~/.vim/conf/diff.vim
+"
+" If no conf order was required, we could use this
+"for f in glob('~/.vim/conf/*.vim', 0, 1) "See https://vi.stackexchange.com/a/11225 for glob flags
+    "execute 'source' f
+"endfor
+"

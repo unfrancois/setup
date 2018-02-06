@@ -34,8 +34,8 @@
         stat = status
 
 [user]
-        name = ftamboise
-        email = ftamboise@mappy.com
+        name = francois
+        email = 
 
 [core]
         excludesfile = ~/.gitignore
