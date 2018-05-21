@@ -1,42 +1,29 @@
-[alias]
-        bl2 = log --graph --branches --abbrev-commit --pretty=oneline --decorate=full
-        bl = log --graph --branches --pretty=format:'%C(magenta)%h%C(reset) -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative
-        bl1 = log --graph --pretty=format:'%C(magenta)%h%C(reset) -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative
-        b = branch
-        br = branch
-	co = checkout
-        c = commit --verbose
-        ca = commit --verbose --all
-        cam = commit --verbose --amend
-        camn = commit --verbose --amend --no-edit
-        cm = commit --verbose
-        comm = commit --verbose
-        commit = commit --verbose
-        done = commit -eF done.txt
-        cp = cherry-pick
-        d = diff
-        dc = diff --cached
-#        ps = log --pretty=oneline $(git push -n |& tail -1 | nth 1)
-        g = grep
-	l1 = log --pretty=oneline
-	l = log
-	lo = log
-	m = merge
-	ma = merge --abort
-        p = pull
-	pr = pull --rebase
-	r = rebase
-	ra = rebase --abort
-	rc = rebase --continue
-	rh = reset --hard
-	s = status
-	st = status
-        stat = status
-
+# This is Git's per-user configuration file.
 [user]
-        name = francois
-        email = 
-
+# Please adapt and uncomment the following lines:
+#	name = François TAMBOISE
+#	email = funnyfrancois@gmail.com
+[user]
+	name = Francois TAMBOISE
+	email = funnyfrancois@gmail.com
 [core]
         excludesfile = ~/.gitignore
-	editor = vi
+	editor = vim
+[alias]
+        st = status
+        ci = commit
+        co = checkout
+        us = reset HEAD
+        rv = checkout HEAD --
+        df = diff
+        dc = diff --cached
+        kf = difftool -y
+        kc = difftool -y --cached        
+        lol = log --graph --decorate --pretty=oneline --abbrev-commit
+        last = !git --no-pager log -1 HEAD
+        lg = log --oneline --graph
+        head = !git --no-pager show -s --pretty='tformat:%h (%s, %ad)' --date=short
+[branch]
+        autosetuprebase = always
+[push]
+        default = upstream

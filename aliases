@@ -9,8 +9,10 @@
   #bsd*)     echo "BSD" ;;
   #*)        echo "unknown: $OSTYPE" ;;
 #esac
-gvim () { gvim --remote "$@" }
-alt_gci () { git commit -m "$(git diff --name-only --cached)" }
-alt_done_save () { find . -name "$@" -type f | xargs -I {} sed -n -e 's/^.*#DONE:\(.*\)/\1/p' {} > done.txt }
-alt_done_rm () { find . -name "$@" -type f | xargs -I {} sed -i -e '/DONE:/ d' {} }
+alias gvim='gvim --remote'
 alias tt='tree -C -s -F -L'
+
+alias fd='find . -type d -name'
+alias ff='find . -type f -name'
+
+alias hg=" fc -El 0 | grep"

@@ -1,7 +1,4 @@
 # Path to your oh-my-zsh installation.
-#
-# Install with : sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-# or : sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
@@ -9,14 +6,15 @@ export ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME=pygmalion
-# ZSH_THEME="robbyrussell"
+#ZSH_THEME=ys
+#ZSH_THEME=gentoo
+
+# Example aliases
+# alias zshconfig="vim ~/.zshrc"
+# alias ohmyzsh="vim ~/.oh-my-zsh"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -30,8 +28,8 @@ ZSH_THEME=pygmalion
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+# Uncomment the following line to disable command auto-correction.
+# DISABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -52,18 +50,18 @@ ZSH_THEME=pygmalion
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git screen python docker fabric pip)
-
-# User configuration
-
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$HOME/.local/bin"
-# export MANPATH="/usr/local/man:$MANPATH"
+plugins=(git screen python colored-man colorize capistrano fabric pip virtualenv virtualenvwrapper debian virtualenv-prompt vagrant)
 
 source $ZSH/oh-my-zsh.sh
 
+# User configuration
+
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export MANPATH="/usr/local/man:$MANPATH"
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
+export PYTHONIOENCODING="utf_8"
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -78,14 +76,34 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
+source ~/.aliases
+
+## Setup zsh-autosuggestions
+#source ~/.zsh-autosuggestions/autosuggestions.zsh
+
+## Enable autosuggestions automatically
+#zle-line-init() {
+    #zle autosuggest-start
+#}
+#zle -N zle-line-init
+
+## use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
+## zsh-autosuggestions is designed to be unobtrusive)
+#bindkey '^T' autosuggest-toggle
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 #
+#http://stackoverflow.com/questions/3964068/zsh-automatically-run-ls-after-every-cd
+function list_all() {
+    emulate -L zsh
+    ls -a
+}
+chpwd_functions=(${chpwd_functions[@]} "list_all")
+
+cd ~/
+
 #http://www.howtogeek.com/howto/44997/how-to-use-bash-history-to-improve-your-command-line-productivity/
 HISTCONTROL=ignoreboth
+source ~/git-subrepo/.rc
+
+#https://docs.npmjs.com/getting-started/fixing-npm-permissions#option-2-change-npms-default-directory-to-another-directory
+export PATH=~/.npm-global/bin:~/.local/bin:$PATH
