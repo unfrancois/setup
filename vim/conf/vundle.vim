@@ -50,13 +50,13 @@ Plugin 'kburdett/vim-nuuid.git' "then comment in plugin nuuidgen to get uuid in 
 "https://github.com/honza/vim-snippets/issues/363
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
+"Plugin 'garbas/vim-snipmate'
 Plugin 'w0rp/ale'
 "
 "Plugin 'ervandew/supertab'
 "let g:SuperTabDefaultCompletionType    = '<C-n>'
 "let g:SuperTabCrMapping                = 0
-"Plugin 'SirVer/ultisnips'
+Plugin 'SirVer/ultisnips'
 "let g:UltiSnipsExpandTrigger="<tab>"
 "let g:UltiSnipsJumpForwardTrigger="<tab>"
 "let g:UltiSnipsJumpBackwardTrigger="<s-tab>"

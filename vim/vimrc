@@ -10,7 +10,7 @@ source ~/.vim/conf/font_colorscheme.vim
 source ~/.vim/conf/buffer_session.vim
 source ~/.vim/conf/search.vim
 source ~/.vim/conf/format_indent.vim
-"source ~/.vim/conf/autocomplete.vim
+source ~/.vim/conf/autocomplete.vim
 source ~/.vim/conf/browsing.vim
 source ~/.vim/conf/editing.vim
 source ~/.vim/conf/build.vim
