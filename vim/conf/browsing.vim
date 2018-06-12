@@ -21,3 +21,15 @@ let g:netrw_liststyle=3
 " map <C-f>     :NERDTreeToggle<CR>
 " map <C-b>     :BufExplorer<CR>
 " map <C-l>     :TagbarToggle<CR>
+
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
+    \ }

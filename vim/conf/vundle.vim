@@ -6,6 +6,7 @@ call vundle#begin()
 Plugin 'Tagbar'
 Plugin 'bufexplorer.zip'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'mileszs/ack.vim'
 "Plugin 'code_complete' "Disabled, conflict with vim-snipmate
 Plugin 'ctrlp.vim'
@@ -23,6 +24,7 @@ Plugin 'vim-scripts/eclipse.vim'
 Plugin 'jpo/vim-railscasts-theme'
 Plugin 'BenBergman/TagHighlight'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'rdnetto/YCM-Generator'
 "http://val.markovic.io/articles/a-vim-plugin-that-always-highlights-the-enclosing-tags#fnref:tags
 Plugin 'Valloric/MatchTagAlways'
 Plugin 'Shougo/vimproc'
@@ -64,6 +66,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'eagletmt/ghcmod-vim'
 "Install https://github.com/bitc/lushtags
 Plugin 'bitc/lushtags'
+Plugin 'vim-scripts/a.vim'
 
 call vundle#end() 
 
