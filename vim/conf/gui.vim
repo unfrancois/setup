@@ -11,3 +11,5 @@ set guioptions-=T  "remove toolbar
 set cursorcolumn
 set cursorline
 set mouse=a
+"https://stackoverflow.com/questions/5073079/how-to-open-same-file-in-same-tab-for-commandline-vim
+set switchbuf=usetab

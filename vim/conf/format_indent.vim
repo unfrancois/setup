@@ -25,7 +25,9 @@ autocmd FileType cpp setlocal noexpandtab shiftwidth=4 tabstop=4
 
 " Copy and paste to os clipboard
 "http://vim.wikia.com/wiki/Accessing_the_system_clipboard
-set clipboard=unnamedplus
+"Disabled, very annoying...
+"set clipboard=unnamed
+
 " https://github.com/begriffs/haskell-vim-now/blob/master/.vimrc
 "nmap <leader>y "*y
 "vmap <leader>y "*y

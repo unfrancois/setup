@@ -27,7 +27,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
 "http://val.markovic.io/articles/a-vim-plugin-that-always-highlights-the-enclosing-tags#fnref:tags
 Plugin 'Valloric/MatchTagAlways'
-Plugin 'Shougo/vimproc'
+Plugin 'Shougo/vimproc', {'do' : 'make'}
 Plugin 'Shougo/vimshell.vim'
 Plugin 'KevinGoodsell/vim-csexact'
 Plugin 'mitsuhiko/vim-jinja'
