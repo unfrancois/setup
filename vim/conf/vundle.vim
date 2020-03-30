@@ -67,6 +67,8 @@ Plugin 'eagletmt/ghcmod-vim'
 "Install https://github.com/bitc/lushtags
 Plugin 'bitc/lushtags'
 Plugin 'vim-scripts/a.vim'
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+
 
 call vundle#end() 
 
